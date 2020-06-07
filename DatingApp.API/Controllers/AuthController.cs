@@ -67,16 +67,17 @@ namespace DatingApp.API.Controllers
             Expires = DateTime.Now.AddDays(1),
             SigningCredentials = creds
          };
-         
+
          var tokenHandler = new JwtSecurityTokenHandler();
 
          var token = tokenHandler.CreateToken(tokenDescripor);
 
-         return Ok(new {
+         return Ok(new
+         {
             token = tokenHandler.WriteToken(token)
          });
       }
 
-      
+
    }
 }
